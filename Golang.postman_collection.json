@@ -1,0 +1,243 @@
+{
+  "info": {
+    "_postman_id": "458b9454-e109-43b7-95bd-ae4dd6ad0d7e",
+    "name": "Golang",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "20805201"
+  },
+  "item": [
+    {
+      "name": "Local",
+      "item": [
+        {
+          "name": "Get Games",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Ezequiel\",\r\n    \"email\": \"ezequielyur@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8090/api/library",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8090",
+              "path": [
+                "api",
+                "library"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add Game",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"rawg_id\": 1234577,\r\n    \"title\": \"GTA VI\",\r\n    \"genre\":\"action\",\r\n    \"platform\" : \"Windows\",\r\n    \"cover_url\" : \"https://sims.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8090/api/library",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8090",
+              "path": [
+                "api",
+                "library"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add note",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"personal_note\": \"Excelente\",\r\n    \"personal_score\": 7,\r\n    \"status\": \"jugando\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8090/api/library/1234577",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8090",
+              "path": [
+                "api",
+                "library",
+                "1234577"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Game",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8090/api/library/1234577",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8090",
+              "path": [
+                "api",
+                "library",
+                "1234577"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Stats",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8090/api/library/stats",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8090",
+              "path": [
+                "api",
+                "library",
+                "stats"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Local a RAWG Api",
+      "item": [
+        {
+          "name": "Get Games",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8090/api/games?search=zelda",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8090",
+              "path": [
+                "api",
+                "games"
+              ],
+              "query": [
+                {
+                  "key": "search",
+                  "value": "zelda"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get by Rawg ID",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Ezequiel\",\r\n    \"email\": \"ezequielyur@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8090/api/games/479836",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8090",
+              "path": [
+                "api",
+                "games",
+                "479836"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Rawg API",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://api.rawg.io/api/games?key=945d345a57cc4c3fb7b4f67211edd4c8&search=zelda",
+          "protocol": "https",
+          "host": [
+            "api",
+            "rawg",
+            "io"
+          ],
+          "path": [
+            "api",
+            "games"
+          ],
+          "query": [
+            {
+              "key": "key",
+              "value": "945d345a57cc4c3fb7b4f67211edd4c8"
+            },
+            {
+              "key": "search",
+              "value": "zelda"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
